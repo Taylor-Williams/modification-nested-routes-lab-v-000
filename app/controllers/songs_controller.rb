@@ -27,7 +27,7 @@ class SongsController < ApplicationController
   def new
     if params[:artist_id] && Artist.find_by(params[:artist_id]).valid?
       @song = Song.new(artist_id: params[:artist_id])
-      redirect_to artist_path
+      redirect_to artists_path
     else
       @song = Song.new
     end
